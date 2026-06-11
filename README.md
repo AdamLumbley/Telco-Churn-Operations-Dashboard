@@ -6,7 +6,7 @@
 
 ## Overview
 
-This project analyzes customer churn within a telecommunications company using Power BI...
+This project analyzes customer churn within a telecommunications company using Power BI.
 
 ## Data Model
 
