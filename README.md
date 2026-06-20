@@ -10,15 +10,17 @@ This project analyzes customer churn within a telecommunications company using P
 
 ## Data Model
 
-The original dataset was transformed into a dimensional model consisting of:
+The dataset was transformed into a dimensional model to support churn analysis in Power BI.
 
-- 1 Fact Table
-- 2 Dimension Tables
+- 1 Fact Table (Customer Churn)
+- 2 Dimension Tables (Customer, Service)
 - 1 Dedicated DAX Measures Table
+
+Relationships were structured using a star schema approach to enable efficient filtering and KPI calculations across churn segments.
 
 ## Dashboard
 
-The dashboard provides an operational overview of churn performance, customer behavior, and retention opportunities.
+The dashboard provides an operational view of customer churn, highlighting risk segments, service-level drivers, and retention opportunities across customer groups.
 
 ## Project Objectives
 
@@ -53,14 +55,21 @@ The dashboard provides an operational overview of churn performance, customer be
 
 ## Business Impact
 
-1. Transition customers away from month-to-month contracts.
-2. Investigate elevated churn among Fiber Optic customers.
-3. Increase adoption of automatic payment methods.
+- High churn concentration identified in month-to-month contracts, indicating pricing or contract structure risk.
+- Fiber optic customers show elevated churn, suggesting potential service quality or pricing issues.
+- Electronic check payments correlate with higher churn rates, indicating lower retention among non-automatic payment users.
+
+  ## Key Insights
+
+- Month-to-month customers exhibit significantly higher churn compared to long-term contracts.
+- Fiber optic service customers show elevated churn rates relative to other service types.
+- Customers using electronic check payments have the highest churn rate among payment methods.
+- Long-term contracts (1–2 years) show strong retention performance.
 
 ## Tools Used
 
-- Power BI
-- Power Query
-- DAX
-- Dimensional Data Modeling (Star Schema)
-- Data Visualization & Business Intelligence
+- Power BI  
+- Power Query  
+- DAX  
+- Data Modeling (Star Schema)  
+- Data Visualization & Business Intelligence  
