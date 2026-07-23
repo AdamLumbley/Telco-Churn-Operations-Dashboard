@@ -1,12 +1,21 @@
 # Telco Churn Operations Dashboard
+
 ![Operations Dashboard](Telco%20Operations%20Dashboard.png)
 ![Data Model](Telco%20Data%20Model.png)
 
 ## Overview
-This project analyzes customer churn within a telecommunications company using Power BI.
+This project analyzes customer churn within a telecommunications company using Power BI, identifying which customer segments and service attributes drive attrition, and what that means for retention strategy.
+
+## Project Objectives
+- Measure overall customer churn performance
+- Identify the largest drivers of customer attrition
+- Quantify churn across customer segments
+- Generate actionable retention recommendations
+- Support telecom decision-making with data-driven insights
 
 ## Data Model
 The dataset was transformed into a dimensional model to support churn analysis in Power BI.
+
 - 1 Fact Table (Customer Churn)
 - 2 Dimension Tables (Customer, Service)
 - 1 Dedicated DAX Measures Table
@@ -38,14 +47,7 @@ DIVIDE(
 ## Dashboard
 The dashboard provides an operational view of customer churn, highlighting risk segments, service-level drivers, and retention opportunities across customer groups.
 
-## Project Objectives
-- Measure overall customer churn performance
-- Identify the largest drivers of customer attrition
-- Quantify churn across customer segments
-- Generate actionable retention recommendations
-- Support telecom decision-making with data-driven insights
-
-## Key Findings
+## Findings & Business Impact
 
 ### Contract Type
 | Contract Type | Churn Rate |
@@ -54,10 +56,14 @@ The dashboard provides an operational view of customer churn, highlighting risk 
 | One Year | 11.27% |
 | Two Year | 2.83% |
 
+Month-to-month customers churn at more than 3x the rate of one-year contracts and 15x the rate of two-year contracts — the single clearest signal in the data, and a strong case for incentivizing longer commitments.
+
 ### Internet Service Type
 | Service Type | Churn Rate |
 |-------------|------------|
 | Fiber Optic | 41.89% |
+
+Fiber optic customers churn at a materially higher rate than other service types, suggesting a service quality or pricing issue worth investigating separately from contract structure.
 
 ### Payment Method
 | Payment Method | Churn Rate |
@@ -65,20 +71,11 @@ The dashboard provides an operational view of customer churn, highlighting risk 
 | Electronic Check | 45.29% |
 | Credit Card (Automatic) | 15.24% |
 
-## Business Impact
-- High churn concentration identified in month-to-month contracts, indicating pricing or contract structure risk.
-- Fiber optic customers show elevated churn, suggesting potential service quality or pricing issues.
-- Electronic check payments correlate with higher churn rates, indicating lower retention among non-automatic payment users.
-
-## Key Insights
-- Month-to-month customers exhibit significantly higher churn compared to long-term contracts.
-- Fiber optic service customers show elevated churn rates relative to other service types.
-- Customers using electronic check payments have the highest churn rate among payment methods.
-- Long-term contracts (1–2 years) show strong retention performance.
+Electronic check payers churn nearly 3x more than customers on automatic credit card billing — switching customers to autopay is a low-effort retention lever.
 
 ## Tools Used
-- Power BI  
-- Power Query  
-- DAX (AI-assisted)  
-- Data Modeling (Star Schema)  
+- Power BI
+- Power Query
+- DAX (AI-assisted)
+- Data Modeling (Star Schema)
 - Data Visualization & Business Intelligence
