@@ -1,0 +1,89 @@
+# Telco DAX Measures
+
+**Authorship:** AI-generated, human-prompted and reviewed for logical accuracy.
+
+9 DAX measures powering the Telco churn and operations dashboards.
+
+---
+
+## Revenue Churn Rate %
+Percentage of total MRR lost to churned customers.
+
+Revenue Churn Rate % = 
+DIVIDE(
+    CALCULATE(SUM('Fact_Charges'[Monthly Charges]), 'Fact_Charges'[Churn] = "Yes"),
+    [MRR]
+)
+
+---
+
+## Customer Churn Rate %
+Percentage of customers who churned, out of all customers.
+
+Customer Churn Rate % = 
+DIVIDE(
+    CALCULATE(COUNTROWS('Fact_Charges'), 'Fact_Charges'[Churn] = "Yes"),
+    COUNTROWS('Fact_Charges'),
+    0
+)
+
+---
+
+## MRR
+Total monthly recurring revenue across all customers, regardless of churn status.
+
+MRR = 
+CALCULATE(
+    SUM('Fact_Charges'[Monthly Charges]),
+    ALL('Fact_Charges'[Churn])
+)
+
+---
+
+## Churned MRR
+Monthly recurring revenue lost to churned customers.
+
+Churned MRR = 
+CALCULATE(
+    SUM('Fact_Charges'[Monthly Charges]),
+    'Fact_Charges'[Churn] = "Yes"
+)
+
+---
+
+## Retained MRR
+Monthly recurring revenue held by customers who have not churned.
+
+Retained MRR = 
+CALCULATE(
+    SUM('Fact_Charges'[Monthly Charges]),
+    'Fact_Charges'[Churn] = "No"
+)
+
+---
+
+## ARPU
+Average revenue per user — total revenue divided by total customers.
+
+ARPU = DIVIDE([Total Revenue], [Total Customers], 0)
+
+---
+
+## Total Churn
+Count of churned customer records.
+
+Total Churn = CALCULATE(COUNTROWS('Fact_Charges'), 'Fact_Charges'[Churn] = "Yes")
+
+---
+
+## Total Customers
+Count of distinct customers.
+
+Total Customers = COUNTROWS('Dim_Customer')
+
+---
+
+## Total Revenue
+Sum of monthly charges across all customer records.
+
+Total Revenue = SUM(Fact_Charges[Monthly Charges])
